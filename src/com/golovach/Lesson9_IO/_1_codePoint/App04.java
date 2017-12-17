@@ -15,8 +15,6 @@ public class App04 {
         System.out.println(str.codePointCount(0,2));
         System.out.println(str.charAt(0));
         System.out.println(str.charAt(1));
-
-
     }
 
 }

@@ -15,6 +15,6 @@ public class App00 {
         Charset utf16le = StandardCharsets.UTF_16LE;
         Charset utf8 = StandardCharsets.UTF_8;
         //всегда когда пишешь ПО надо учитывать Charset
-        //это всё разные правила кодирование кодепоинтов
+        //это всё разные правила кодирование codePoint
     }
 }

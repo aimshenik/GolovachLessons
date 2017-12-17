@@ -10,12 +10,9 @@ import java.util.Arrays;
 public class App04x {
     public static void main(String[] args) {
         char[] array = Character.toChars(150_000);
-        char ch0 = array[0];
-        char ch1 = array[1];
-        System.out.println((int) ch0);
-        System.out.println((int) ch1);
-        String str = new String(new char[]{ch0, ch1});
+        String str = new String(array);
         System.out.println(str);
+        // правила преобразования строки в байты и наоборот должны быть одинаковы
         byte[] bytes = str.getBytes(StandardCharsets.UTF_8);
         System.out.println(Arrays.toString(bytes));
         String s = new String(bytes, StandardCharsets.UTF_8);
