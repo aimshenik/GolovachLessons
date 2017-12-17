@@ -9,7 +9,7 @@ public class App00 {
         char c4 = 'Ы'; // символ, который есть в UNICODE
         char c5 = '\u0F0F'; // T = UNICODE
         String s = "\u0F0F\u0F0F\u0F0FHELLO\u0F0F\u0F0F\u0F0F";
-        System.out.println((int)c4);
+        System.out.println((int)c5);
         System.out.println(s);
 
 

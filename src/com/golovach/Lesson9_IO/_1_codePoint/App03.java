@@ -8,8 +8,8 @@ public class App03 {
         char[] chars = Character.toChars(150_000);
         System.out.println(chars.length);
         System.out.println(chars);
-        System.out.println(chars[0]);
-        System.out.println(chars[1]);
+        System.out.println((int)chars[0]);
+        System.out.println((int)chars[1]);
 
         chars = Character.toChars(0x11080);
         System.out.println(chars.length);
