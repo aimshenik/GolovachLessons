@@ -13,8 +13,6 @@ public class App01 {
 
     }
 
-    //fst snd
-    //src dst
     private static void copy(InputStream src, OutputStream dst) throws IOException {
         while (true) {
             int elem = src.read();

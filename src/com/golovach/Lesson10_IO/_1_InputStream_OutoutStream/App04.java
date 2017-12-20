@@ -7,33 +7,32 @@ import java.io.OutputStream;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
-public class App03 {
+public class App04 {
     public static void main(String[] args) throws IOException {
-
-        //СМОТРИМ МЕТОД copy()
-
-        URL url = new URL("https://www.yandex.ru/");//открывает сокет ОС. Сокетов максимум 2 байта ~65000
+        URL url = new URL("https://www.yandex.ru/");
         try (InputStream inet = url.openStream();
              ByteArrayOutputStream buff = new ByteArrayOutputStream()) {
             long t0 = System.currentTimeMillis();
             copy(inet, buff);
             long t1 = System.currentTimeMillis();
             System.out.println("DELTA = " + (t1-t0));
-            byte[] rawData = buff.toByteArray(); //максимум 2гб потому что размер int
+            byte[] rawData = buff.toByteArray();
             String html = new String(rawData, StandardCharsets.UTF_8);
             System.out.println(html);
         }
     }
 
+    //правим МЕТОД copy() - чтение по 1 байту не очень удобно
     private static void copy(InputStream src, OutputStream dst) throws IOException {
-        int elem;
-        while ((elem = src.read()) != -1) { // (elem = src.read() - это и statement и expression. это и действие и значение
-            dst.write(elem);
+        byte[] buff = new byte[1024];
+        int count = 0;
+        while ((buff[count] = (byte) src.read()) != -1) {
+            if (count == 1023) {
+                dst.write(buff, 0, count + 1);
+                count = -1;
+            }
+            count++;
         }
-        //так можно записать
-        int x, y, z, t;
-        x = y = z = t = 1;
-
-        //10_2 Finished!!!
+        dst.write(buff, 0, count);
     }
 }
