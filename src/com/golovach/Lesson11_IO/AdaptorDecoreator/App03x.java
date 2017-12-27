@@ -1,11 +1,8 @@
 package com.golovach.Lesson11_IO.AdaptorDecoreator;
 
-import java.io.CharArrayReader;
-import java.io.CharArrayWriter;
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
 
-public class App03 {
+public class App03x {
     public static void main(String[] args) throws IOException {
 
         char[] charBuff = {'H', 'e', 'l', 'l', 'o'};
@@ -15,7 +12,7 @@ public class App03 {
     private static void f(Reader reader) throws IOException {
         int ch;
         while ((ch = reader.read()) != -1) {
-            System.out.println((char)ch);
+            System.out.println((char) ch);
         }
     }
 }
