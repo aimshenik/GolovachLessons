@@ -12,7 +12,10 @@ public class EntityDataInput implements EntityInput {
     }
 
     public Person readPerson() throws IOException {
-        String name = in.readUTF();
+        String name = null;
+        if (in.readBoolean()) {
+            name = in.readUTF();
+        }
         int age = in.readInt();
         int count = in.readInt();
         Person.Sex[] sexArray = new Person.Sex[count];
