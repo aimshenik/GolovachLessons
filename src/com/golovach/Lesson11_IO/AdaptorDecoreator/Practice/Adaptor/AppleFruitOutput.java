@@ -1,4 +1,4 @@
-package com.golovach.Lesson11_IO.Practice;
+package com.golovach.Lesson11_IO.AdaptorDecoreator.Practice.Adaptor;
 
 import java.io.DataOutput;
 import java.io.IOException;
