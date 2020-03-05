@@ -6,7 +6,7 @@ public class App00 {
         char c1 = 0x0000; //min
         char c2 = 0xFFFF; // F = 1111
         char c3 = 0xabcd; //max
-        char c4 = 'Ы'; // символ, который есть в UNICODE
+        char c4 = '�'; // символ, который есть в UNICODE
         char c5 = '\u0F0F'; // T = UNICODE
         String s = "\u0F0F\u0F0F\u0F0FHELLO\u0F0F\u0F0F\u0F0F";
         System.out.println((int)c5);
